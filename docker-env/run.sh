@@ -6,8 +6,11 @@ docker run -dit \
         --ulimit memlock=-1 \
         --ulimit stack=67108864 \
         --privileged \
-        -v /data2:/data2 -v /data3:/data3 -v /data2/chenweiling:/root \
+        -v /mnt:/mnt \
+        -v /mnt/handuo:/root \
+        -v /mnt:/mnt \
+        -v /data2:/data2 -v /data3:/data3 \
         -v /var/run/nvidia-topologyd/virtualTopology.xml:/var/run/nvidia-topologyd/virtualTopology.xml \
-        --hostname xia-v \
-        --name xia-v \
-        weiling-base:xia
+        --hostname hd-v \
+        --name hd-base-v \
+        handuo:hd-base
